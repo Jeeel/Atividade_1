@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name = "viewport"
+        content= width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> Pessoa </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css">
+</head>
+<body>
+    <h1 style="text-align:center;">TABELA PESSOAS</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col- xs -12">
+                <a href="/add"="button" class="btn btn-primary">Adicionar Pessoa </button></a>
+            </div>
+            <div class="col- xs -12">
+                <table class = "table">
+                        <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Nascimento</th>
+                            <th>Opções</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for e in pessoas %}
+                        <tr>
+                            <td>{{e.nome}}</td>
+                            <td>{{e.email}}</td>
+                            <td>{{e.telefone}}</td>
+                            <td>{{e.nascimento}}</td>
+                            <td>
+                                <a href="/edit/{{e.id}}">Editar</a> /
+                                <a href="/delete/{{e.id}}">Excluir</a>
+                                </td>
+                                </tr>
+                                        {% endfor %}
+                            </tbody>
